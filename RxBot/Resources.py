@@ -182,10 +182,13 @@ def resetStartAgain():
     if resources.findImageOnScreen("gem.png", 0.8):
         resources.moveMouseToLocation(resources.findImageOnScreen("gem.png", 0.8))
         pyautogui.click()
-    if resources.findImageOnScreen("darkGem.png", 0.8):
+    elif resources.findImageOnScreen("darkGem.png", 0.8):
         resources.moveMouseToLocation(resources.findImageOnScreen("darkGem.png", 0.8))
         pyautogui.click()
 
+    else:
+        print("No game window detected")
+        return
     pyautogui.keyDown("ctrl")
     pyautogui.keyDown("down")
     time.sleep(1)
